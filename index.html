@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Natal webamigos!</title>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
+  <style>
+    html {}
+
+    img[id^="image"] {
+      --width: 200px;
+      --height: 200px;
+      position: absolute;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      width: var(--width);
+      height: var(--height);
+    }
+
+    svg {
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: -10;
+    }
+
+    path {
+      fill: #76cf5d;
+    }
+
+    #main-title,
+    #main-desc {
+      text-align: center;
+      font-family: "Comic Sans MS";
+      background: repeating-linear-gradient(to right, cyan, blue, violet, orange, yellow, green);
+      background-size: 800%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation-name: swag;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes swag {
+      0% {
+        background-position: 0% 100%;
+      }
+
+      16% {
+        background-position: 16% 100%;
+      }
+
+      33% {
+        background-position: 33% 100%;
+      }
+
+      49% {
+        background-position: 49% 100%;
+      }
+
+      65% {
+        background-position: 65% 100%;
+      }
+
+      81% {
+        background-position: 81% 100%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    @keyframes image1 {
+      0% {
+        left: calc(55% - var(--width));
+        top: calc(65% - var(--height));
+      }
+
+      30% {
+        left: calc(85% - var(--width));
+        top: calc(65% - var(--height));
+      }
+
+      50% {
+        left: calc(33% - var(--width));
+        top: calc(54% - var(--height));
+      }
+
+      70% {
+        left: calc(0%);
+        top: calc(79% - var(--height));
+      }
+
+      100% {
+        left: calc(55% - var(--width));
+        top: calc(65% - var(--height));
+      }
+    }
+
+    @keyframes image2 {
+      0% {
+        left: calc(70% - var(--width));
+        top: calc(30% - var(--height));
+      }
+
+      32% {
+        left: calc(40% - var(--width));
+        top: calc(40% - var(--height));
+      }
+
+      60% {
+        left: calc(51% - var(--width));
+        top: calc(100% - var(--height));
+      }
+
+      80% {
+        left: calc(66% - var(--width));
+        top: calc(66% - var(--height));
+      }
+
+      100% {
+        left: calc(70% - var(--width));
+        top: calc(30% - var(--height));
+      }
+    }
+
+    @keyframes image3 {
+      0% {
+        left: calc(85% - var(--width));
+        top: calc(90% - var(--height));
+      }
+
+      25% {
+        left: calc(80% - var(--width));
+        top: calc(40% - var(--height));
+      }
+
+      60% {
+        left: calc(70% - var(--width));
+        top: calc(57% - var(--height));
+      }
+
+      80% {
+        left: calc(40% - var(--width));
+        top: calc(66% - var(--height));
+      }
+
+      100% {
+        left: calc(85% - var(--width));
+        top: calc(90% - var(--height));
+      }
+    }
+  </style>
+  <script>
+    const max = 10;
+    const min = 3;
+
+    for (let index = 1; index < 4; index++) {
+      document.styleSheets[0].insertRule(`#image${index} {animation-name: image${index}; animation-duration: ${Math.floor(Math.random() * (max - min + 1)) + min}s}`);
+    }
+
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+</head>
+
+<body>
+
+  <div id="main">
+    <h1 id="main-title">FELIZ NATAL WEBAMIGOS!</h1>
+    <p id="main-desc">QUE DEUS ABENÇOE VOCÊS</p>
+  </div>
+  <div id="images">
+    <img id="image1" src="https://statusspeak.com/2023photo/all/santaji1.gif" />
+    <img id="image2" src="https://statusspeak.com/2023photo/all/santaji2.gif" />
+    <img id="image3" src="https://i.pinimg.com/originals/90/0f/20/900f20b173c59e8a2c34b34d53fbd83a.gif" />
+  </div>
+  <script>
+    var sound = new Howl({
+    src: ['./music.mp3'],
+    autoplay: true,
+    loop: true,
+    volume: 0.5,
+});
+
+    sound.play();
+  </script>
+</body>
+
+</html>
